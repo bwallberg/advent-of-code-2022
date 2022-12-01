@@ -7,10 +7,14 @@ fn main() {
   let args: Vec<String> = env::args().collect();
 
   if args.len() < 2 {
-    day_1::main();
+    day_1::step_1();
+    day_1::step_2();
   } else {
     match args[1].as_str() {
-      "1" => day_1::main(),
+      "1" => {
+        day_1::step_1();
+        day_1::step_2();
+      },
       &_ => println!("Day {} solution not available", args[1].as_str()),
     }
   }

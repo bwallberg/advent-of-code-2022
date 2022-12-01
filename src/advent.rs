@@ -1,7 +1,7 @@
 use std::{fs::File, path::Path, io::{self, Read}};
 
-pub fn read(day: &str, step: &str) -> Result<String, io::Error> {
-  let path_string = format!("./days/{}/{}", day, step);
+pub fn read(input: &str) -> Result<String, io::Error> {
+  let path_string = format!("./inputs/{}", input);
   let path = Path::new(path_string.as_str());
   
   let file = File::open(path);
@@ -16,8 +16,8 @@ pub fn read(day: &str, step: &str) -> Result<String, io::Error> {
   }
 }
 
-pub fn read_lines(day: &str, step: &str) -> Result<Vec<String>, io::Error> {
-  match read(day, step) {
+pub fn read_lines(input: &str) -> Result<Vec<String>, io::Error> {
+  match read(input) {
     Ok(file) => Ok(file.lines().map(String::from).collect()),
     Err(e) => Err(e) 
   }
