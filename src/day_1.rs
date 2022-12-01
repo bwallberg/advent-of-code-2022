@@ -28,5 +28,5 @@ pub fn step_2() {
   let input = advent::read_lines("1").unwrap();
 
   let elves = get_elves(input);
-  println!("Solution Step 1: {}", elves[0] + elves[1] + elves[2]);
+  println!("Solution Step 2: {}", elves.iter().take(3).sum::<i32>());
 }
