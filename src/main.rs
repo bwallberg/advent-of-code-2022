@@ -1,6 +1,3 @@
-  #![feature(iter_next_chunk)]
-
-
 use std::env;
 
 mod advent;

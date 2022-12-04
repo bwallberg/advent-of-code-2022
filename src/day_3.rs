@@ -1,5 +1,3 @@
-#![feature(iter_next_chunk)]
-
 use crate::advent::read_lines;
 
 fn get_duplicate(rucksack: &String) -> Option<char> {
@@ -8,10 +6,10 @@ fn get_duplicate(rucksack: &String) -> Option<char> {
 }
 
 fn get_groups(input: Vec<String>) -> Vec<char> {
-  let mut iter = input.into_iter();
+  let iter = input.chunks(3);
 
   let mut groups: Vec<char> = Vec::new();
-  while let Ok(chunk) = iter.next_chunk::<3>() {
+  for chunk in iter {
     let group_item = chunk[0]
       .chars()
       .find(|item| chunk[1].contains(*item) && chunk[2].contains(*item))
