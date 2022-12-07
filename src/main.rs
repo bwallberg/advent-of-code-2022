@@ -6,12 +6,13 @@ mod day_2;
 mod day_3;
 mod day_4;
 mod day_5;
+mod day_6;
 
 fn main() {
   let args: Vec<String> = env::args().collect();
 
   if args.len() < 2 {
-    day_5::main();
+    day_6::main();
   } else {
     match args[1].as_str() {
       "1" => {
@@ -31,6 +32,9 @@ fn main() {
       },
       "5" => {
         day_5::main();
+      },
+      "6" => {
+        day_6::main();
       }
       &_ => println!("Day {} solution not available", args[1].as_str()),
     }
